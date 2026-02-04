@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utsav - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: auto;
+            background: #0a0a0a;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .social-icon { transition: transform 0.3s ease, filter 0.3s ease; }
+        .social-icon:hover { transform: translateY(-5px) scale(1.1); filter: brightness(1.2); }
+
+        .line { height: 4px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <canvas id="canvas"></canvas>
+
+    <!-- MAIN SECTION -->
+    <section class="relative min-h-screen">
+        <div class="content min-h-screen flex flex-col items-center justify-center px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Main Heading -->
+                <div class="mb-8 fade-in">
+                    <div class="flex items-center justify-center gap-4 md:gap-8 mb-4">
+                        <div class="line flex-1 max-w-[80px] md:max-w-xs hidden sm:block"></div>
+                        <h1 class="text-4xl sm:text-5xl md:text-7xl font-light text-white whitespace-nowrap">
+                            Hey, I’m <span class="gradient-text font-normal">Utsav.</span>
+                        </h1>
+                        <div class="line flex-1 max-w-[80px] md:max-w-xs hidden sm:block"></div>
+                    </div>
+                </div>
+
+                <!-- Subtitle -->
+                <p class="text-gray-300 text-base sm:text-lg md:text-xl mb-12 max-w-2xl mx-auto px-4 fade-in delay-1">
+                    A 19-year-old full-stack web developer with a passion for turning creative ideas into interactive digital experiences.
+                </p>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center gap-4 sm:gap-6 fade-in delay-2 flex-wrap">
+                    <!-- Email -->
+                    <a href="mailto:utsavbanik@outlook.com" class="social-icon" aria-label="Email">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/utsavbanik" target="_blank" class="social-icon" aria-label="GitHub">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/utsav-banik/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Discord -->
+                    <a href="https://discord.com/users/1036937425047535656" target="_blank" class="social-icon" aria-label="Discord">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"></path>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/utsav_xd_/" target="_blank" class="social-icon" aria-label="Instagram">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <!-- X (Twitter) -->
+                    <a href="https://x.com/Chill16Mr2071" target="_blank" class="social-icon" aria-label="X (Twitter)">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/40 transition-all">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="white">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FOOTER INSIDE MAIN SECTION -->
+            <footer class="absolute bottom-6 left-0 right-0 z-10 text-center text-white/70 text-sm">
+                <p class="tracking-wide">2024 © Utsav Banik | All Systems Operational</p>
+                <div class="mt-2 h-1 bg-gradient-to-r from-purple-500 to-transparent mx-auto w-40"></div>
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        // Particle animation
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(150, 100, 200, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        const particleCount = 100;
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        const opacity = (1 - distance / 120) * 0.3;
+                        ctx.strokeStyle = `rgba(150, 100, 200, ${opacity})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            connectParticles();
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Mouse interaction
+        let mouse = { x: null, y: null };
+
+        canvas.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+
+            particles.forEach(particle => {
+                const dx = mouse.x - particle.x;
+                const dy = mouse.y - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    particle.x -= dx / distance * 2;
+                    particle.y -= dy / distance * 2;
+                }
+            });
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+    </script>
+</body>
+</html>
